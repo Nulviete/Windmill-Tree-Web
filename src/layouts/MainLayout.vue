@@ -11,57 +11,96 @@
         style="width: 200px"
       />
 
-      <q-tabs
-        align="left"
-        class="text-black"
-      >
-        <q-route-tab
-          to="/"
-          label="Who are we?"
-        />
-        <q-btn-dropdown
-          unelevated
-          transition-show="flip-right"
-          transition-hide="flip-left"
-          label="Projects"
-        >
-          <q-list class="bg-primary">
-            <q-item
-              clickable
+      <div class="q-pa-md">
+        <div class="q-gutter-md row items-center">
+          <q-btn
+            class="text-black"
+            color="primary"
+            label="Who are we?"
+            to="/"
+            unelevated
+          />
+          <q-btn
+            class="text-black"
+            color="primary"
+            label="Projects"
+            unelevated
+          >
+            <q-menu
+              transition-show="flip-right"
+              transition-hide="flip-left"
             >
-              <q-item-section>Volunteering programs</q-item-section>
-            </q-item>
-            <q-item
-              clickable
-            >
-              <q-item-section>International</q-item-section>
-            </q-item>
-            <q-item
-              clickable
-            >
-              <q-item-section>4 Ukraine</q-item-section>
-            </q-item>
-            <q-item
-              clickable
-            >
-              <q-item-section>LOCAL</q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
-        <q-route-tab
-          to="/OurTeam"
-          label="Our Team"
-        />
-
-        <q-route-tab
-          to="/page3"
-          label="Photos"
-        />
-        <q-route-tab
-          to="/page3"
-          label="We need you (open call)"
-        />
-      </q-tabs>
+              <q-list>
+                <q-item clickable>
+                  <q-item-section>
+                    Volunteering programs
+                  </q-item-section>
+                  <q-item-section side>
+                    <q-icon name="keyboard_arrow_right" />
+                  </q-item-section>
+                  <q-menu
+                    anchor="top end"
+                    self="top start"
+                  >
+                    <q-list>
+                      <q-item clickable>
+                        <q-item-section>Coordinating</q-item-section>
+                      </q-item>
+                      <q-item clickable>
+                        <q-item-section>Hosting</q-item-section>
+                      </q-item>
+                    </q-list>
+                  </q-menu>
+                </q-item>
+                <q-item clickable>
+                  <q-item-section>
+                    International
+                  </q-item-section>
+                </q-item>
+                <q-item clickable>
+                  <q-item-section>
+                    4 Ukraine
+                  </q-item-section>
+                </q-item>
+                <q-item clickable>
+                  <q-item-section>
+                    LOCAL
+                  </q-item-section>
+                </q-item>
+                <q-item clickable>
+                  <q-item-section>
+                    Partner
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+            <q-item-section>
+              <q-icon name="keyboard_arrow_down" />
+            </q-item-section>
+          </q-btn>
+          <q-btn
+            class="text-black"
+            color="primary"
+            label="Our Team"
+            to="/OurTeam"
+            unelevated
+          />
+          <q-btn
+            class="text-black"
+            color="primary"
+            label="Latest news"
+            to="/LatestNews"
+            unelevated
+          />
+          <q-btn
+            color="primary"
+            class="text-black"
+            label="We need you (open call)"
+            to="/Opencall"
+            unelevated
+          />
+        </div>
+      </div>
       <div
         class="row q-pa-md"
       >

@@ -9,6 +9,16 @@
       <h1 class="text-white">
         Windmill Tree
       </h1>
+
+      <h3
+        class="text-white"
+        style="width: 350px"
+      >
+        ,,Give a person a little of yourself. For this, the soul is filled with light."
+      </h3>
+      <h3 class="text-white">
+        -Lina Kostenko
+      </h3>
     </q-parallax>
     <div
       class="text-center row justify-center contacts"

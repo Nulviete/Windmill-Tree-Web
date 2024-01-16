@@ -10,6 +10,14 @@ const routes = [
       {
         path: 'OurTeam',
         component: () => import('pages/OurTeam.vue')
+      },
+      {
+        path: 'LatestNews',
+        component: () => import('src/pages/LatestNews.vue')
+      },
+      {
+        path: 'Opencall',
+        component: () => import('src/pages/OpenCall.vue')
       }
     ]
   },
