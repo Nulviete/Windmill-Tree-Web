@@ -1,10 +1,10 @@
 <template>
   <q-page>
-    <q-parallax
+    <!-- <q-parallax
 
       src="../assets/loadPage_main.jpg"
       :height="1000"
-      :speed="1"
+      :speed="0.5"
     >
       <h1 class="text-white">
         Windmill Tree
@@ -19,7 +19,37 @@
       <h3 class="text-white">
         -Lina Kostenko
       </h3>
-    </q-parallax>
+    </q-parallax> -->
+    <div
+      class="hero text-center q-ma-auto vertical-center q-mx-auto"
+      style=""
+    >
+      <h1
+        class=""
+        style="margin: 0"
+      >
+        Windmill Tree
+      </h1>
+
+      <h3
+        class="q-mx-auto"
+        style="width: 850px padding-bottom: -15px"
+      >
+        ,,Give a person a little of yourself.
+      </h3>
+      <h3
+        class="q-mx-auto"
+        style="width: 850px padding-top: 0"
+      >
+        For this, the soul is filled with light."
+      </h3>
+      <h3
+        class=""
+        style=""
+      >
+        -Lina Kostenko
+      </h3>
+    </div>
     <div
       class="text-center row justify-center contacts"
     >
@@ -27,16 +57,14 @@
         class="fa-regular fa-envelope fa-4x cursor-pointer"
         style="padding: 10px 45px"
       />
-
-      <i
+      <a href="https://www.facebook.com/FundacjaWindmillTree/photos_by"><i
         class="fa-brands fa-facebook fa-4x cursor-pointer"
         style="padding: 10px 45px"
-      />
-
-      <i
+      /></a>
+      <a href="https://www.instagram.com/foundation_windmill_tree/"><i
         class="fa-brands fa-instagram fa-4x cursor-pointer"
         style="padding: 10px 45px"
-      />
+      /></a>
 
       <i
         class="fa-brands fa-youtube fa-4x cursor-pointer"
@@ -56,9 +84,23 @@
   </q-page>
 </template>
 
-<script>
+<script setup>
 
-export default {
-  name: 'WhoAreWe'
-}
 </script>
+
+<style scoped>
+.hero {
+  background-image: url("assets/loadPage_main.jpg");
+  height: 85vh;
+background-position: center;
+background-size: cover;
+
+color: white;
+}
+h1 {
+  padding: 100px 0;
+}
+a {
+  color: inherit;
+}
+</style>

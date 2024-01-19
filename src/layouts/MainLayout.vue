@@ -3,7 +3,8 @@
     <q-header
       reveal
       elevated
-      class="bg-primary text-white row justify-between items-center q-px-lg"
+      class="bg-primary text-white row justify-between items-center q-px-lg q-mx-auto"
+      style=""
       height-hint="98"
     >
       <q-img
@@ -117,13 +118,17 @@
       </div>
     </q-header>
 
-    <q-page-container>
+    <!-- pro obrazek, kdyz budu chtit misto parallax -->
+    <q-page-container
+      style=""
+    >
       <router-view />
     </q-page-container>
 
     <q-footer
       elevated
-      class="bg-grey-8 text-white"
+      class="bg-grey-8 text-white q-mx-auto"
+      style=""
     >
       <q-toolbar>
         <q-toolbar-title class="text-center">
