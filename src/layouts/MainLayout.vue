@@ -53,7 +53,10 @@
                     </q-list>
                   </q-menu>
                 </q-item>
-                <q-item clickable>
+                <q-item
+                  clickable
+                  to="/Projects/InternationalProjects"
+                >
                   <q-item-section>
                     International
                   </q-item-section>

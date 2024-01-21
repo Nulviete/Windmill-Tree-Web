@@ -65,11 +65,10 @@
         class="fa-brands fa-instagram fa-4x cursor-pointer"
         style="padding: 10px 45px"
       /></a>
-
-      <i
+      <a href="https://www.youtube.com/@foundationwindmilltree8203"><i
         class="fa-brands fa-youtube fa-4x cursor-pointer"
         style="padding: 10px 45px"
-      />
+      /></a>
 
       <i
         class="fa-brands fa-whatsapp fa-4x cursor-pointer"

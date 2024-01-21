@@ -1,89 +1,103 @@
 <template>
+  <!-- head section -->
   <div
-    class="cards row q-col-gutter-md justify-center"
+    class="head q-pb-xl q-pt-xl"
     style="border-bottom: 1px solid"
   >
     <div
-      v-for="member in headMembers"
-      :key="member"
-      class="col-4 text-center q-pb-lg"
-      style=""
+      class="row q-gutter-sm justify-center"
     >
-      <q-card
-        style="width: 350px; min-width: 350px"
-        class="my-content q-mx-auto bg-primary"
+      <div
+        v-for="member in headMembers"
+        :key="member"
+        class="text-center "
+        style="width: 350px;"
       >
-        <q-card-section>
-          <h5>{{ member.name }}</h5>
-        </q-card-section>
-        <q-card-section>
-          <img
-            :src="member.photoUrl"
-            height="200px"
-          >
-        </q-card-section>
-        <q-card-section>
-          {{ member.position }}
-        </q-card-section>
-      </q-card>
+        <q-card
+          style=""
+          class="my-content bg-primary"
+        >
+          <q-card-section>
+            <h5>{{ member.name }}</h5>
+          </q-card-section>
+          <q-card-section>
+            <img
+              :src="member.photoUrl"
+              height="200px"
+            >
+          </q-card-section>
+          <q-card-section>
+            {{ member.position }}
+          </q-card-section>
+        </q-card>
+      </div>
     </div>
   </div>
+  <!-- secondHead section -->
   <div
-    class="cards row q-col-gutter-md justify-center"
+    class="secondHead q-pb-xl q-pt-xl"
     style="border-bottom: 1px solid"
   >
     <div
-      v-for="member in secondHeadMembers"
-      :key="`md-${member}`"
-      class="col-3 text-center q-pb-lg q-pt-xl"
+      class="row q-gutter-sm justify-center"
       style=""
     >
-      <q-card
-        style="width: 350px; min-width: 350px"
-        class="my-content q-mx-auto bg-primary"
+      <div
+        v-for="member in secondHeadMembers"
+        :key="member"
+        class="text-center"
+        style="width: 350px"
       >
-        <q-card-section>
-          <h5>{{ member.name }}</h5>
-        </q-card-section>
-        <q-card-section>
-          <img
-            :src="member.photoUrl"
-            height="200px"
-          >
-        </q-card-section>
-        <q-card-section>
-          {{ member.position }}
-        </q-card-section>
-      </q-card>
+        <q-card
+          style=""
+          class="my-content q-mx-auto bg-primary"
+        >
+          <q-card-section>
+            <h5>{{ member.name }}</h5>
+          </q-card-section>
+          <q-card-section>
+            <img
+              :src="member.photoUrl"
+              height="200px"
+            >
+          </q-card-section>
+          <q-card-section>
+            {{ member.position }}
+          </q-card-section>
+        </q-card>
+      </div>
     </div>
   </div>
-  <div
-    class="cards row q-col-gutter-md justify-center"
-    style=""
-  >
+  <!-- volunteer section -->
+  <div class="volunteer q-mb-lg q-pt-xl">
     <div
-      v-for="member in volunteers"
-      :key="`md-${member}`"
-      class="col-3 text-center q-pb-lg q-pt-xl "
+      class="row q-gutter-sm justify-center"
       style=""
     >
-      <q-card
-        style="width: 350px; min-width: 350px"
-        class="my-content q-mx-auto bg-primary"
+      <div
+        v-for="member in volunteers"
+        :key="member"
+        class="col-3 text-center"
+        style="width: 350px;"
       >
-        <q-card-section>
-          <h5>{{ member.name }}</h5>
-        </q-card-section>
-        <q-card-section>
-          <img
-            :src="member.photoUrl"
-            height="200px"
-          >
-        </q-card-section>
-        <q-card-section>
-          {{ member.position }}
-        </q-card-section>
-      </q-card>
+        <q-card
+          style=""
+          class="my-content bg-primary"
+        >
+          <q-card-section>
+            <h5>{{ member.name }}</h5>
+          </q-card-section>
+          <q-card-section>
+            <img
+              :src="member.photoUrl"
+              height="200px"
+            >
+          </q-card-section>
+          <q-card-section>
+            {{ member.position }}
+          </q-card-section>
+        </q-card>
+      </div>
     </div>
   </div>
 </template>
@@ -91,10 +105,22 @@
 <script setup>
 import { computed } from 'vue'
 
-const props = defineProps(['members'])
+const props = defineProps({
+  members: {
+    type: Array,
+    default: () => []
+  }
+})
 
 const headMembers = computed(() => props.members.filter((member) => member.position === 'Head'))
 const secondHeadMembers = computed(() => props.members.filter((member) => member.position === 'SecondHead'))
 const volunteers = computed(() => props.members.filter((member) => member.position === 'Volunteer'))
 
 </script>
+
+<style scoped>
+.q-card {
+  border-radius: 10px;
+
+}
+</style>

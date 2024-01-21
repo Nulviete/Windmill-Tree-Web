@@ -1,5 +1,8 @@
 <template>
-  <q-page padding>
+  <q-page
+    padding
+    class="bg-accent"
+  >
     <!-- content -->
     <p>Latest News</p>
   </q-page>

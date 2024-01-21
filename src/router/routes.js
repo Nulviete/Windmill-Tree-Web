@@ -18,7 +18,13 @@ const routes = [
       {
         path: 'Opencall',
         component: () => import('src/pages/OpenCall.vue')
+      },
+      {
+
+        path: 'Projects/InternationalProjects',
+        component: () => import('src/pages/Projects/InternationalProjects.vue')
       }
+
     ]
   },
 

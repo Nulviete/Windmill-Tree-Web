@@ -3,7 +3,7 @@
     padding
     class="bg-accent"
   >
-    <MemberCard :members />
+    <MemberCard :members="members" />
   </q-page>
 </template>
 
