@@ -1,134 +1,58 @@
 <template>
-  <div class="row justify-center q-gutter-sm">
-    <q-card
-      class="col-4"
-      style="width: 350px"
-    >
-      <q-card-section>
-        <div class="text-h7 text-center">
-          *Photo collage*
-        </div>
-      </q-card-section>
-      <q-card-section>
-        <div class="text-h6 text-center">
-          2021
-        </div>
-      </q-card-section>
-      <div>
-        <q-card-section>
-          <div class="text-h8 text-center">
-            Training Course “Art of inclusion”
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="text-h8 text-center">
-            Strategic partnership “Terra Incognita”
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="text-h8 text-center">
-            Strategic partnership “ARTstART”
-          </div>
-        </q-card-section>
-      </div>
-    </q-card>
-    <q-card
-      class="col-4"
-      style="width: 350px; "
-    >
-      <q-card-section>
-        <div class="text-h7 text-center">
-          *Photo collage w menu*
-        </div>
-      </q-card-section>
-      <q-card-section>
-        <div class="text-h6 text-center">
-          2021
-        </div>
-      </q-card-section>
-      <div>
-        <q-card-section>
-          <q-item clickable>
-            <q-item-section>
-              Training Course “Art of inclusion”
-            </q-item-section>
-          </q-item>
-          <q-item clickable>
-            <q-item-section>
-              Strategic partnership “Terra Incognita”
-            </q-item-section>
-          </q-item>
-          <q-item clickable>
-            <q-item-section>
-              Strategic partnership “ARTstART”
-            </q-item-section>
-          </q-item>
+  <div
 
-          <div class="text-h8 text-center" />
-        </q-card-section>
-      </div>
-    </q-card>
+    class="row justify-center q-gutter-sm q-mx-auto"
+  >
     <q-card
-      class="col-4"
-      style="width: 350px"
+      v-for="year in years"
+      :key="year"
+      class="col-4 bg-primary"
+      style="width: 350px; height: 500px; border-radius: 5px  "
     >
-      <q-card-section>
-        <div class="text-h7 text-center">
-          *Photo collage*
+      <q-card-section class="q-pa-none">
+        <div
+          class=""
+          style="text-align: center"
+        >
+          <img
+            :src="'/projectPic/natureProject.jpg'"
+            class="full-width"
+            style="border-radius: 5px 5px 0px 0px"
+            height=""
+          >
+          <h2
+            class="text-white full-width q-py-md"
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%); background: rgba(0, 0, 0, .5)"
+          >
+            {{ year }}
+          </h2>
         </div>
       </q-card-section>
-      <q-card-section>
-        <div class="text-h6 text-center">
-          2021
+      <!-- <q-card-section>
+        <div
+          class="text-h2 text-center text-white "
+          style="background-image: url('../../public/projectPic/natureProject.jpg');
+          height: 350px;
+          background-size: cover; align-self: center "
+        >
+          {{ year }}
         </div>
-      </q-card-section>
-      <div>
+      </q-card-section> -->
+      <div
+        style="overflow: auto; height: 170px"
+        class=""
+      >
         <q-card-section>
-          <div class="text-h8 text-center">
-            Training Course “Art of inclusion”
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="text-h8 text-center">
-            Strategic partnership “Terra Incognita”
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="text-h8 text-center">
-            Strategic partnership “ARTstART”
-          </div>
-        </q-card-section>
-      </div>
-    </q-card>
-    <q-card
-      class="col-4"
-      style="width: 350px"
-    >
-      <q-card-section>
-        <div class="text-h7 text-center">
-          *Photo collage*
-        </div>
-      </q-card-section>
-      <q-card-section>
-        <div class="text-h6 text-center">
-          2021
-        </div>
-      </q-card-section>
-      <div>
-        <q-card-section>
-          <div class="text-h8 text-center">
-            Training Course “Art of inclusion”
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="text-h8 text-center">
-            Strategic partnership “Terra Incognita”
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="text-h8 text-center">
-            Strategic partnership “ARTstART”
-          </div>
+          <q-item
+            v-for="project in projectsByYear(year)"
+            :key="project"
+            clickable
+            class="bg-accent"
+          >
+            <q-item-section>
+              {{ project.name }}
+            </q-item-section>
+          </q-item>
         </q-card-section>
       </div>
     </q-card>
@@ -136,5 +60,29 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const props = defineProps({
+  projects: {
+    type: Array,
+    default: () => []
+  }
+})
+
+const years = ref([])
+
+for (let i = 0; i < props.projects.length; i++) {
+  if (!years.value.includes(props.projects[i].year)) {
+    years.value.push(props.projects[i].year)
+  }
+}
+
+years.value.sort(function (a, b) {
+  return b - a
+})
+
+function projectsByYear (rok) {
+  return props.projects.filter((project) => project.year === rok)
+}
 
 </script>

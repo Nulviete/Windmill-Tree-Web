@@ -2,6 +2,7 @@
   <q-page
     padding
     class="bg-accent"
+    style=""
   >
     <MemberCard :members="members" />
   </q-page>

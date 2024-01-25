@@ -135,9 +135,7 @@
     >
       <q-toolbar>
         <q-toolbar-title class="text-center">
-          <h5-text class="full-width">
-            Copyright © 2024 Windmill Tree | All Rights Reserved
-          </h5-text>
+          <h5>aaa</h5>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
