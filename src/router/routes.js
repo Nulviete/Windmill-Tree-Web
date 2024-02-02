@@ -23,6 +23,17 @@ const routes = [
 
         path: 'Projects/InternationalProjects',
         component: () => import('src/pages/Projects/InternationalProjects.vue')
+
+      },
+      {
+        path: 'Projects/:projectCategory/:name',
+        component: () => import('src/pages/Projects/ProjectPage.vue'),
+        props: true
+      },
+      {
+
+        path: 'Projects/ForUkraine',
+        component: () => import('src/pages/Projects/ForUkraine.vue')
       }
 
     ]

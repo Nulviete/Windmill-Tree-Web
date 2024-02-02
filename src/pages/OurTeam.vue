@@ -14,75 +14,94 @@ import MemberCard from 'components/MemberCard.vue'
 
 const members = ref([
   {
-    name: 'Hrystia',
+    name: 'Hrystia Pavlutska',
     photoUrl: '/members/Hrystia.JPG',
-    position: 'Head'
+    position: 'Head',
+    positionDescription: 'Head of organization',
+    role: 'Faciliator, project manager'
 
   },
   {
     name: 'Ola',
-    photoUrl: '/members/Ola.jpg',
-    position: 'Head'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'Head',
+    positionDescription: 'Vice president',
+    role: 'Faciliator, project manager'
 
   },
   {
-    name: 'Vira',
-    photoUrl: '/members/Vira.jpg',
-    position: 'Head'
+    name: 'Vira Pavlutska',
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'Head',
+    positionDescription: 'Vice president',
+    role: 'Project manager'
 
   },
   {
     name: 'Kassia',
-    photoUrl: '/members/xyz.jpg',
-    position: 'SecondHead'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'SecondHead',
+    positionDescription: '',
+    role: 'Coordinator of Erasmus + acreditation projects, financial department'
 
   },
   {
     name: 'Kuba',
-    photoUrl: '/members/xyz.jpg',
-    position: 'SecondHead'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'SecondHead',
+    positionDescription: '',
+    role: 'Coordinator of European Solidarity corps program, logistic and transportation manager'
 
   },
   {
     name: 'Czapi',
-    photoUrl: '/members/xyz.jpg',
-    position: 'SecondHead'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'SecondHead',
+    positionDescription: '',
+    role: 'Foundation photografer, fairy elf '
 
   },
   {
     name: 'Misa',
-    photoUrl: '/members/xyz.jpg',
-    position: 'SecondHead'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'SecondHead',
+    positionDescription: '',
+    role: 'Foundation web design master'
 
   },
   {
     name: 'Milana',
-    photoUrl: '/members/xyz.jpg',
-    position: 'Volunteer'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'Volunteer',
+    role: 'Project manager, children, youth animation'
 
   },
   {
     name: 'Rodrigo',
-    photoUrl: '/members/xyz.jpg',
-    position: 'Volunteer'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'Volunteer',
+    role: 'Project manager, children, youth animation'
 
   },
   {
     name: 'Yassim',
-    photoUrl: '/members/xyz.jpg',
-    position: 'Volunteer'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'Volunteer',
+    role: 'children and youth animation'
 
   },
   {
     name: 'Alvaro',
-    photoUrl: '/members/xyz.jpg',
-    position: 'Volunteer'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'Volunteer',
+    role: 'children and youth animation'
 
   },
   {
     name: 'Dani',
-    photoUrl: '/members/xyz.jpg',
-    position: 'Volunteer'
+    photoUrl: '/members/Hrystia.JPG',
+    position: 'Volunteer',
+    role: 'Children and youth animation'
 
   }
 ])

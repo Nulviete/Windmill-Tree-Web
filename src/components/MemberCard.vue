@@ -2,32 +2,44 @@
   <!-- head section -->
   <div
     class="head q-pb-xl q-pt-xl"
-    style="border-bottom: 1px solid"
+    style=""
   >
     <div
-      class="row q-gutter-sm justify-center"
+      class="row q-gutter-lg justify-center"
     >
       <div
         v-for="member in headMembers"
         :key="member"
-        class="text-center "
-        style="width: 350px;"
+        class="card text-center "
+        style=""
       >
         <q-card
           style=""
-          class="my-content bg-primary"
+          class=""
         >
-          <q-card-section>
-            <h5>{{ member.name }}</h5>
+          <q-card-section
+            class=""
+          >
+            <div class="text-white text-h5 q-pa-none q-ma-none">
+              <b>{{ member.name }}</b> <br>
+            </div>
+            <p class="text-white q-pa-none q-ma-none">
+              {{ member.positionDescription }}
+            </p>
           </q-card-section>
-          <q-card-section>
+          <q-card-section class="q-pa-none">
             <img
               :src="member.photoUrl"
-              height="200px"
+              width="100%"
+              class="q-ma-none q-pa-none"
+              style="border-radius: 0 0 10px 10px;"
             >
-          </q-card-section>
-          <q-card-section>
-            {{ member.position }}
+            <p
+              class="q-mb-sm text-white"
+              style=""
+            >
+              {{ member.role }}
+            </p>
           </q-card-section>
         </q-card>
       </div>
@@ -35,66 +47,85 @@
   </div>
   <!-- secondHead section -->
   <div
-    class="secondHead q-pb-xl q-pt-xl"
-    style="border-bottom: 1px solid"
+    class="head q-pb-xl q-pt-xl"
+    style=""
   >
     <div
-      class="row q-gutter-sm justify-center"
-      style=""
+      class="row q-gutter-lg justify-center"
     >
       <div
         v-for="member in secondHeadMembers"
         :key="member"
-        class="text-center"
-        style="width: 350px"
+        class="card text-center "
+        style=""
       >
         <q-card
           style=""
-          class="my-content q-mx-auto bg-primary"
+          class=""
         >
-          <q-card-section>
-            <h5>{{ member.name }}</h5>
+          <q-card-section
+            class=""
+          >
+            <p class="text-white q-pa-none q-ma-none">
+              <b>{{ member.name }}</b> <br> {{ member.positionDescription }}
+            </p>
           </q-card-section>
-          <q-card-section>
+          <q-card-section class="q-pa-none">
             <img
               :src="member.photoUrl"
-              height="200px"
+              width="100%"
+              class="q-ma-none q-pa-none"
+              style="border-radius: 0 0 10px 10px;"
             >
-          </q-card-section>
-          <q-card-section>
-            {{ member.position }}
+            <p
+              class="q-mb-sm text-white"
+              style="height: 42px"
+            >
+              {{ member.role }}
+            </p>
           </q-card-section>
         </q-card>
       </div>
     </div>
   </div>
   <!-- volunteer section -->
-  <div class="volunteer q-mb-lg q-pt-xl">
+  <div
+    class="head q-pb-xl q-pt-xl"
+    style=""
+  >
     <div
-      class="row q-gutter-sm justify-center"
-      style=""
+      class="row q-gutter-lg justify-center"
     >
       <div
         v-for="member in volunteers"
         :key="member"
-        class="col-3 text-center"
-        style="width: 350px;"
+        class="card text-center "
+        style=""
       >
         <q-card
           style=""
-          class="my-content bg-primary"
+          class=""
         >
-          <q-card-section>
-            <h5>{{ member.name }}</h5>
+          <q-card-section
+            class=""
+          >
+            <p class="text-white q-pa-none q-ma-none">
+              <b>{{ member.name }}</b> <br> {{ member.positionDescription }}
+            </p>
           </q-card-section>
-          <q-card-section>
+          <q-card-section class="q-pa-none">
             <img
               :src="member.photoUrl"
-              height="200px"
+              width="100%"
+              class="q-ma-none q-pa-none"
+              style="border-radius: 0 0 10px 10px;"
             >
-          </q-card-section>
-          <q-card-section>
-            {{ member.position }}
+            <p
+              class="q-mb-sm text-white"
+              style=""
+            >
+              {{ member.role }}
+            </p>
           </q-card-section>
         </q-card>
       </div>
@@ -121,6 +152,12 @@ const volunteers = computed(() => props.members.filter((member) => member.positi
 <style scoped>
 .q-card {
   border-radius: 10px;
+background-color: #6D9B7A;
+}
+.card {
+  width: 310px;
+}
+.img {
 
 }
 </style>

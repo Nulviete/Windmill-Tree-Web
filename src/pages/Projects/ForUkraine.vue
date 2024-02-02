@@ -27,10 +27,8 @@ import getCollection from 'src/composables/getCollection'
 
 const { documents, load, error, dataLoaded } = getCollection()
 
-load('international')
+load('forUkraine')
 if (error.value != null) {
   console.log(error)
 }
-console.log('InternationalProjects', documents)
-
 </script>

@@ -39,7 +39,7 @@
         </div>
       </q-card-section> -->
       <div
-        style="overflow: auto; height: 170px"
+        style="overflow: auto; height: 180px"
         class=""
       >
         <q-card-section>
@@ -48,6 +48,7 @@
             :key="project"
             clickable
             class="bg-accent"
+            :to="{ path: '/Projects/'+project.category+'/'+project.name }"
           >
             <q-item-section>
               {{ project.name }}
@@ -86,3 +87,7 @@ function projectsByYear (rok) {
 }
 
 </script>
+
+<style scoped>
+
+</style>

@@ -61,7 +61,11 @@
                     International
                   </q-item-section>
                 </q-item>
-                <q-item clickable>
+                <q-item
+                  v-ripple
+                  clickable
+                  to="/Projects/ForUkraine"
+                >
                   <q-item-section>
                     4 Ukraine
                   </q-item-section>
@@ -124,6 +128,7 @@
     <!-- pro obrazek, kdyz budu chtit misto parallax -->
     <q-page-container
       style=""
+      class="bg-accent"
     >
       <router-view />
     </q-page-container>
