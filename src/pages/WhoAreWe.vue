@@ -1,25 +1,5 @@
 <template>
   <q-page>
-    <!-- <q-parallax
-
-      src="../assets/loadPage_main.jpg"
-      :height="1000"
-      :speed="0.5"
-    >
-      <h1 class="text-white">
-        Windmill Tree
-      </h1>
-
-      <h3
-        class="text-white"
-        style="width: 350px"
-      >
-        ,,Give a person a little of yourself. For this, the soul is filled with light."
-      </h3>
-      <h3 class="text-white">
-        -Lina Kostenko
-      </h3>
-    </q-parallax> -->
     <div
       class="hero text-center q-ma-auto vertical-center q-mx-auto"
       style="position: relative"
@@ -43,25 +23,20 @@
     >
       <a href="mailto:nulvietz@gmail.com"><i
         class="fa-regular fa-envelope fa-4x cursor-pointer"
-        style="padding: 10px 45px"
       /></a>
 
       <a href="https://www.facebook.com/FundacjaWindmillTree/photos_by"><i
         class="fa-brands fa-facebook fa-4x cursor-pointer"
-        style="padding: 10px 45px"
       /></a>
       <a href="https://www.instagram.com/foundation_windmill_tree/"><i
         class="fa-brands fa-instagram fa-4x cursor-pointer"
-        style="padding: 10px 45px"
       /></a>
       <a href="https://www.youtube.com/@foundationwindmilltree8203"><i
         class="fa-brands fa-youtube fa-4x cursor-pointer"
-        style="padding: 10px 45px"
       /></a>
 
       <a href="https://wa.me/+48796369201"><i
         class="fa-brands fa-whatsapp fa-4x cursor-pointer"
-        style="padding: 10px 45px"
       /></a>
     </div>
 
@@ -84,7 +59,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 
 .hero {
-  background-image: url("assets/loadPage_main.jpg");
+  background-image: url("assets/Windmill_Tree.png");
   height: 85vh;
 background-position: center;
 background-size: cover;
@@ -111,6 +86,7 @@ color: #E9FDD5;
 }
 a {
   color: inherit;
+  padding: 10px 45px;
 }
 .about-us {
 font-family: 'Fira Sans', sans-serif;

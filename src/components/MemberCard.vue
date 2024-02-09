@@ -151,13 +151,15 @@ const volunteers = computed(() => props.members.filter((member) => member.positi
 
 <style scoped>
 .q-card {
-  border-radius: 10px;
+  border-radius: 40px;
+  border: solid 2px green;
 background-color: #6D9B7A;
+
 }
 .card {
   width: 310px;
 }
-.img {
-
+img {
+height: auto;
 }
 </style>
