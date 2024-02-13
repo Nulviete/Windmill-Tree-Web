@@ -110,7 +110,7 @@
             class=""
           >
             <p class="text-white q-pa-none q-ma-none">
-              <b>{{ member.name }}</b> <br> {{ member.positionDescription }}
+              <b>{{ member.name }}</b> (Ukraine) <br> {{ member.positionDescription }}
             </p>
           </q-card-section>
           <q-card-section class="q-pa-none">
@@ -124,7 +124,7 @@
               class="q-mb-sm text-white"
               style=""
             >
-              {{ member.role }}
+              {{ member.role2 }} <br> {{ member.date }} <br>{{ member.role }}
             </p>
           </q-card-section>
         </q-card>

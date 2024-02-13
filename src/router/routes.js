@@ -20,6 +20,10 @@ const routes = [
         component: () => import('src/pages/OpenCall.vue')
       },
       {
+        path: 'Toolbox',
+        component: () => import('src/pages/ToolboxPage.vue')
+      },
+      {
 
         path: 'Projects/InternationalProjects',
         component: () => import('src/pages/Projects/InternationalProjects.vue')

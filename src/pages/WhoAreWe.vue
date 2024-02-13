@@ -42,10 +42,10 @@
 
     <div
       style="width: 55%"
-      class="about-us text-center q-mx-auto text-h4 q-py-lg"
+      class="about-us text-justify q-mx-auto text-h4 q-py-lg"
     >
-      Windmill Tree is not just a foundation: we are a family on a true-hearted journey. Our goal? To fill this world with creativity, make youth and social work even better. We are connecting with rural youth and creating bonds between countries.
-      Located in the breathtaking Izery Mountains region, our diverse team is a bland of individuals from Poland, Ukraine, Germany and Czech Republic. We're inviting you to be part of something special. Let's build a world where everyone is included, and every little bit of effort transforms into something wonderfully positive. Welcome home!
+      Windmill Tree is not just a foundation: we are a family on a true-hearted journey.<br><br> Our goal? To fill this world with creativity, make youth and social work even better. We are connecting with rural youth and creating bonds between countries.
+      <br><br>Located in the breathtaking Izery Mountains region, our diverse team is a bland of individuals from Poland, Ukraine, Germany and Czech Republic. We're inviting you to be part of something special. <br><br> Let's build a world where everyone is included, and every little bit of effort transforms into something wonderfully positive. <br><br> Welcome home!
     </div>
   </q-page>
 </template>

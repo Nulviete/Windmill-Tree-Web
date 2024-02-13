@@ -38,7 +38,7 @@ const members = ref([
 
   },
   {
-    name: 'Kassia',
+    name: 'Kasia',
     photoUrl: '/members/Hrystia.JPG',
     position: 'SecondHead',
     positionDescription: '',
@@ -73,8 +73,9 @@ const members = ref([
     name: 'Milana',
     photoUrl: '/members/Hrystia.JPG',
     position: 'Volunteer',
-    role: 'Project manager, children, youth animation'
-
+    role: 'Project manager, children, youth animation',
+    role2: 'Volunteer',
+    date: 'September 2023 - now'
   },
   {
     name: 'Rodrigo',

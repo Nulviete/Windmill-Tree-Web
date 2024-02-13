@@ -107,6 +107,13 @@
             to="/Opencall"
             unelevated
           />
+          <q-btn
+            color="primary"
+            class="text-black"
+            label="Toolbox"
+            to="/Toolbox"
+            unelevated
+          />
         </div>
       </div>
       <div
