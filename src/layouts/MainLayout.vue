@@ -142,14 +142,33 @@
 
     <q-footer
       elevated
-      class="bg-grey-8 text-white q-mx-auto"
+      class="bg-grey-8 text-white q-py-md"
       style=""
     >
-      <q-toolbar>
-        <q-toolbar-title class="text-center">
-          <h5>aaa</h5>
-        </q-toolbar-title>
-      </q-toolbar>
+      <div class="footer row q-mx-auto">
+        <div class="footer-left col-6">
+          <p>
+            Paderewskiego str. 10, 58-506 Jelenia Góra, Poland  <br>
+            VAT number : 6161567287 <br>
+            National Official Register of Entities of the National Economy : 383942113
+          </p>
+        </div>
+        <div class="footer-right col-6 text-right self-end">
+          <p>National Court Register Number 0000784824</p>
+        </div>
+      </div>
     </q-footer>
   </q-layout>
 </template>
+
+<style scoped>
+.footer {
+  width: 55%;
+
+}
+.footer p {
+  font-size: 1.1em;
+  line-height: 2em;
+  margin: 0;
+}
+</style>
