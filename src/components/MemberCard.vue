@@ -107,11 +107,17 @@
           class=""
         >
           <q-card-section
-            class=""
+            class="row justify-center"
           >
             <p class="text-white q-pa-none q-ma-none">
-              <b>{{ member.name }}</b> (Ukraine) <br> {{ member.positionDescription }}
+              <b>{{ member.name }}</b>
             </p>
+            <img
+              :src="'/nation_flag/'+member.country+'_flag.png'"
+              alt=""
+              class="q-pl-sm"
+              style="width: 40px"
+            >
           </q-card-section>
           <q-card-section class="q-pa-none">
             <img
@@ -124,7 +130,7 @@
               class="q-mb-sm text-white"
               style=""
             >
-              {{ member.role2 }} <br> {{ member.date }} <br>{{ member.role }}
+              {{ member.position }} <br> {{ member.date }} <br>{{ member.role }}
             </p>
           </q-card-section>
         </q-card>
@@ -142,6 +148,8 @@ const props = defineProps({
     default: () => []
   }
 })
+
+console.log(props.members, 'this is from Membercard')
 
 const headMembers = computed(() => props.members.filter((member) => member.position === 'Head'))
 const secondHeadMembers = computed(() => props.members.filter((member) => member.position === 'SecondHead'))

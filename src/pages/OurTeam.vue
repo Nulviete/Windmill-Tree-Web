@@ -9,8 +9,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+
 import MemberCard from 'components/MemberCard.vue'
+import { ref } from 'vue'
 
 const members = ref([
   {
@@ -71,14 +72,15 @@ const members = ref([
   },
   {
     name: 'Milana',
+    country: 'ua',
     photoUrl: '/members/Hrystia.JPG',
     position: 'Volunteer',
     role: 'Project manager, children, youth animation',
-    role2: 'Volunteer',
     date: 'September 2023 - now'
   },
   {
     name: 'Rodrigo',
+    country: 'sp',
     photoUrl: '/members/Hrystia.JPG',
     position: 'Volunteer',
     role: 'Project manager, children, youth animation'
@@ -86,6 +88,7 @@ const members = ref([
   },
   {
     name: 'Yassim',
+    country: 'sp',
     photoUrl: '/members/Hrystia.JPG',
     position: 'Volunteer',
     role: 'children and youth animation'
@@ -93,6 +96,7 @@ const members = ref([
   },
   {
     name: 'Alvaro',
+    country: 'sp',
     photoUrl: '/members/Hrystia.JPG',
     position: 'Volunteer',
     role: 'children and youth animation'
@@ -100,6 +104,7 @@ const members = ref([
   },
   {
     name: 'Dani',
+    country: 'it',
     photoUrl: '/members/Hrystia.JPG',
     position: 'Volunteer',
     role: 'Children and youth animation'
