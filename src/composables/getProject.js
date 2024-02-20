@@ -2,28 +2,25 @@ import { ref } from 'vue'
 import { supabase } from 'src/config/supabaseClient'
 
 const getProject = () => {
-  const document = ref(null)
-
+  const documents = ref(null)
+  const error = ref(null)
   const dataLoaded = ref(false)
 
-  const loadProject = async (name) => {
+  const load = async (categoryProject) => {
     try {
-      const { data, error, status } = await supabase.from('projects').select().eq('name', name)
+      const { data } = await supabase.from('projects').select().eq('category', categoryProject)
 
-      if (error && status !== 406) {
+      if (!data) {
         throw Error('no data available')
       }
-      if (data) {
-        document.value = data
-        dataLoaded.value = true
-        console.log('getProject', document, document.value)
-      }
-    } catch (error) {
-      alert(error.message)
+      documents.value = data
+      dataLoaded.value = true
+    } catch (err) {
+      error.value = err.message
     }
   }
 
-  return { document, loadProject, dataLoaded }
+  return { error, documents, load, dataLoaded }
 }
 
 export default getProject

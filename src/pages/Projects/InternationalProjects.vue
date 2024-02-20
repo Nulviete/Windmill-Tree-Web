@@ -23,9 +23,9 @@
 <script setup>
 import ProjectsCard from 'src/components/ProjectsCard.vue'
 
-import getCollection from 'src/composables/getCollection'
+import getProject from 'src/composables/getProject'
 
-const { documents, load, error, dataLoaded } = getCollection()
+const { documents, load, error, dataLoaded } = getProject()
 
 load('international')
 if (error.value != null) {

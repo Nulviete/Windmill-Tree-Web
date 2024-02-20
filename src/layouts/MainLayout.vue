@@ -55,7 +55,7 @@
                 </q-item>
                 <q-item
                   clickable
-                  to="/Projects/InternationalProjects"
+                  :to="{ name: 'InternationalProjects'}"
                 >
                   <q-item-section>
                     International
@@ -64,7 +64,7 @@
                 <q-item
                   v-ripple
                   clickable
-                  to="/Projects/ForUkraine"
+                  :to="{ name: 'ForUkraine'}"
                 >
                   <q-item-section>
                     4 Ukraine
@@ -90,7 +90,7 @@
             class="text-black"
             color="primary"
             label="Our Team"
-            to="/OurTeam"
+            :to="{ name: 'OrTeam'}"
             unelevated
           />
           <q-btn
@@ -146,15 +146,19 @@
       style=""
     >
       <div class="footer row q-mx-auto">
-        <div class="footer-left col-6">
+        <div class="footer-left col-6 self-center">
           <p>
-            Paderewskiego str. 10, 58-506 Jelenia Góra, Poland  <br>
-            VAT number : 6161567287 <br>
-            National Official Register of Entities of the National Economy : 383942113
+            Paderewskiego str. 10,   <br>
+            58-506 Jelenia Góra,  <br>
+            Poland
           </p>
         </div>
-        <div class="footer-right col-6 text-right self-end">
-          <p>National Court Register Number 0000784824</p>
+        <div class="footer-right col-6 text-right self-center">
+          <p>
+            National Court Register No.: 0000784824 <br>
+            VAT No.: 6161567287 <br>
+            National Official Register: 383942113
+          </p>
         </div>
       </div>
     </q-footer>
@@ -163,7 +167,7 @@
 
 <style scoped>
 .footer {
-  width: 55%;
+  width: 60%;
 
 }
 .footer p {
