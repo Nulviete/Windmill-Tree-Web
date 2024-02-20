@@ -21,7 +21,7 @@
     <div
       class="text-center row justify-center contacts bg-grey-5 q-py-md"
     >
-      <a href="mailto:nulvietz@gmail.com"><i
+      <a href="mailto:projects.windmill.tree@gmail.com"><i
         class="fa-regular fa-envelope fa-4x cursor-pointer"
       /></a>
 

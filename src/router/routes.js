@@ -9,6 +9,7 @@ const routes = [
       },
       {
         path: 'OurTeam',
+        name: 'OrTeam',
         component: () => import('pages/OurTeam.vue')
       },
       {
@@ -26,6 +27,7 @@ const routes = [
       {
 
         path: 'Projects/InternationalProjects',
+        name: 'InternationalProjects',
         component: () => import('src/pages/Projects/InternationalProjects.vue')
 
       },
@@ -37,6 +39,7 @@ const routes = [
       {
 
         path: 'Projects/ForUkraine',
+        name: 'ForUkraine',
         component: () => import('src/pages/Projects/ForUkraine.vue')
       }
 

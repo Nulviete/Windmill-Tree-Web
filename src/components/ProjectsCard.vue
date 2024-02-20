@@ -70,6 +70,9 @@ const props = defineProps({
   }
 })
 
+/* testing */
+console.log(props.projects, 'ProjectCard - props')
+
 const years = ref([])
 
 for (let i = 0; i < props.projects.length; i++) {
