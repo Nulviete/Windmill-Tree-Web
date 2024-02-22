@@ -23,9 +23,9 @@
 <script setup>
 import ProjectsCard from 'src/components/ProjectsCard.vue'
 
-import getProject from 'src/composables/getProject'
+import getProjects from 'src/composables/getProjects'
 
-const { documents, load, error, dataLoaded } = getProject()
+const { documents, load, error, dataLoaded } = getProjects()
 
 load('forUkraine')
 if (error.value != null) {
