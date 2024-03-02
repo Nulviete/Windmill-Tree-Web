@@ -26,11 +26,18 @@
             color="white"
             icon="fullscreen"
             text-color="black"
+
             @click="fullscreen=!fullscreen"
           />
         </q-carousel-control>
       </template>
     </q-carousel>
+    <div class="text-h5 text-left q-py-md">
+      <p>{{ props.project.projectDescription }}</p>
+      <p v-if="props.project.countries">
+        Participants from: <br> {{ props.project.countries }}
+      </p>
+    </div>
   </div>
 </template>
 

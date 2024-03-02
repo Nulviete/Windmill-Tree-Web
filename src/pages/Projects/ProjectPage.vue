@@ -7,7 +7,11 @@
       <ProjectPageComponent :project="data[0]" />
     </div>
     <div v-else>
-      <p>asd</p>
+      <q-spinner-hourglass
+        color="grey"
+        size="8em"
+        class=""
+      />
     </div>
   </q-page>
 </template>
