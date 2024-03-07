@@ -5,6 +5,7 @@ const getProject = () => {
   const data = ref(null)
 
   const dataLoaded = ref(false)
+  const firstPic = ref()
 
   const load = async (name) => {
     const { data: project, error } = await supabase.from('projects').select('*').eq('name', name)
@@ -12,7 +13,9 @@ const getProject = () => {
     if (project) {
       data.value = project
       dataLoaded.value = true
-      console.log(data.value, 'getProject composable')
+
+      firstPic.value = project[0].photos[0]
+      console.log(firstPic.value)
     }
     if (error) {
       console.log(error)
@@ -20,7 +23,7 @@ const getProject = () => {
     }
   }
 
-  return { data, load, dataLoaded }
+  return { data, load, dataLoaded, firstPic }
 }
 
 export default getProject

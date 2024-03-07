@@ -18,19 +18,9 @@
         :key="doc"
         :name="doc"
         :img-src="doc"
+
+        @click="fullscreen=!fullscreen"
       />
-
-      <template #control>
-        <q-carousel-control position="bottom-right">
-          <q-btn
-            color="white"
-            icon="fullscreen"
-            text-color="black"
-
-            @click="fullscreen=!fullscreen"
-          />
-        </q-carousel-control>
-      </template>
     </q-carousel>
     <div class="text-h5 text-left q-py-md">
       <p>{{ props.project.projectDescription }}</p>
@@ -53,6 +43,12 @@ const props = defineProps({
 const slide = ref(props.project.photos[0])
 const fullscreen = ref(false)
 console.log(props.project.name, 'ProjectPageComp')
+
+document.onkeydown = (evt) => {
+  if (evt.keyCode === 27) {
+    fullscreen.value = false
+  }
+}
 
 </script>
 
