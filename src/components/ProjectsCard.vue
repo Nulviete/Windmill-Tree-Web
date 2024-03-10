@@ -1,4 +1,25 @@
 <template>
+  <q-btn
+    v-if="selYear"
+    class="backBtn q-px-auto"
+    style="position: absolute;
+    top: 10%;
+    border-radius: 2px;
+    "
+
+    @click="
+      clicked=false;
+      reloadYears()
+      selYear = null
+      projectSel = null
+    "
+  >
+    <q-icon
+      name="mdi-arrow-left-bold-circle-outline"
+      class="q-pr-sm"
+    /> Back to year selection
+  </q-btn>
+
   <div class="row justify-center q-gutter-lg">
     <!-- front side -->
     <div
@@ -7,7 +28,7 @@
       <q-card
         v-for="year in years"
         :key="year"
-        class="flip-card-inner col-4 bg-primary"
+        class="flip-card-inner col-4"
         :class="{ flipped: clicked }"
         style=""
 
@@ -44,15 +65,20 @@
 
         <!-- rear side -->
 
-        <q-card-section class="flip-card-back bg-accent column justify-center">
+        <q-card-section class="flip-card-back column justify-center">
           <q-item
             v-for="project in projectsByYear(year)"
-            :key="project"
+            :key="project.id"
             clickable
             class=""
+            :class="{ active: project === projectSel}"
             style=""
 
-            @click="projectSel = project"
+            active-class="text-white"
+            @click="
+              projectSel = project;
+              console.log('clicked' +project.id)
+            "
           >
             <q-item-section
               class=""
@@ -72,19 +98,22 @@
       style="margin-top: 40px"
     >
       <q-card
-        class="col-4 bg-accent justify-center"
+        class="col-4 justify-center"
         style=""
       >
         <q-card-section class="text-center">
           <h6>{{ projectSel.name }}</h6>
-          <p>{{ projectSel.description }}</p>
+          <p>{{ projectSel.projectDescription }}</p>
+          <p v-if="projectSel.countries">
+            <b>Participants from:</b> <br> {{ projectSel.countries }}
+          </p>
         </q-card-section>
       </q-card>
     </div>
   </div>
 
   <div
-    v-if="dataLoaded"
+    v-if="dataLoaded && projectSel"
     class="q-mx-auto q-pt-md"
     style="width: 800px"
   >
@@ -102,6 +131,7 @@
         :key="doc"
         :name="doc"
         :img-src="doc"
+        @click="fullscreen=!fullscreen"
       />
     </q-carousel>
   </div>
@@ -139,6 +169,17 @@ const projectSel = ref(false)
 const clicked = ref(false)
 const fullscreen = ref(false)
 
+const reloadYears = () => {
+  for (let i = 0; i < props.projects.length; i++) {
+    if (!years.value.includes(props.projects[i].year)) {
+      years.value.push(props.projects[i].year)
+    }
+  }
+
+  years.value.sort(function (a, b) {
+    return b - a
+  })
+}
 for (let i = 0; i < props.projects.length; i++) {
   if (!years.value.includes(props.projects[i].year)) {
     years.value.push(props.projects[i].year)
@@ -158,54 +199,63 @@ const clickedYear = (rok) => {
   return years.value.filter((item) => item === rok)
 }
 
-console.log(clickedYear(2021))
+document.onkeydown = (evt) => {
+  if (evt.keyCode === 27) {
+    fullscreen.value = false
+  }
+}
 
 </script>
 
 <style scoped>
-.flip-card {
 
+.flip-card {
   perspective: 1000px;
 }
-
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-
   transition: transform 0.6s;
   transform-style: preserve-3d;
-
 }
-
-/* .flip-card-inner:hover {
-  transform: rotateY(180deg);
-} */
-
 .flipped {
   transform: rotateY(180deg);
 }
-
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transition: all 0.3s;
 }
-
 .flip-card-back {
-
   transform: rotateY(180deg);
 }
-
 :checked + .flip-card-inner {
   transform: rotateY(180deg);
   -webkit-transform: rotateX(180deg);
 }
-
 .q-card {
-  width: 350px; height: 450px; border-radius: 5px
+  width: 350px; height: 450px; border-radius: 5px;
+}
+.flip-card-front:hover {
+  box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.5);
+  scale: 1.04;
+}
+.active {
+  color: rgb(220, 215, 215);
+  background-color: #869b6c;
+}
+.q-btn.backBtn {
+background-color: #B2D08E
+
+}
+.q-btn.backBtn:hover {
+  color: rgb(220, 216, 216);
+  background-color: #3c714b;
+
 }
 
 </style>

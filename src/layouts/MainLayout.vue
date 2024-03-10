@@ -55,6 +55,7 @@
                 </q-item>
                 <q-item
                   clickable
+                  active-class="bg-green-3"
                   :to="{ name: 'InternationalProjects'}"
                 >
                   <q-item-section>
@@ -64,6 +65,7 @@
                 <q-item
                   v-ripple
                   clickable
+                  active-class="bg-green-3"
                   :to="{ name: 'ForUkraine'}"
                 >
                   <q-item-section>

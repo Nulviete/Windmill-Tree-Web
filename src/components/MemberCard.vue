@@ -78,5 +78,9 @@ height: 300px;
 img.flag {
   width: 40px
 }
+p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 </style>
