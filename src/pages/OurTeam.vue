@@ -24,7 +24,11 @@ import getMembers from 'src/composables/getMembers'
 import MemberCards from 'src/components/MemberCards.vue'
 
 const { loadMembers, data, dataLoaded, error } = getMembers()
+
 loadMembers()
-console.log(data, dataLoaded, error, 'Ourteam')
+
+if (error) {
+  console.log(error)
+}
 
 </script>

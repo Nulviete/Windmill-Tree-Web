@@ -6,6 +6,8 @@
     <div v-if="dataLoaded">
       <ProjectsCard :projects="documents" />
     </div>
+
+    <!-- Loading spinner -->
     <div
       v-else
       class="text-center vertical-center"

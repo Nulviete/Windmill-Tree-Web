@@ -1,25 +1,4 @@
 <template>
-  <q-btn
-    v-if="selYear"
-    class="backBtn q-px-auto"
-    style="position: absolute;
-    top: 10%;
-    border-radius: 2px;
-    "
-
-    @click="
-      clicked=false;
-      reloadYears()
-      selYear = null
-      projectSel = null
-    "
-  >
-    <q-icon
-      name="mdi-arrow-left-bold-circle-outline"
-      class="q-pr-sm"
-    /> Back to year selection
-  </q-btn>
-
   <div class="row justify-center q-gutter-lg">
     <!-- front side -->
     <div
@@ -47,7 +26,7 @@
               :src="'/projectPic/natureProject.jpg'"
               class=""
               style="
-            border-radius: 5px;
+
             width: 100%;
             height: 450px;
             background-size: cover
@@ -101,12 +80,22 @@
         class="col-4 justify-center"
         style=""
       >
-        <q-card-section class="text-center">
+        <q-card-section
+          class="text-center"
+          style="height: 100%"
+        >
           <h6>{{ projectSel.name }}</h6>
-          <p>{{ projectSel.projectDescription }}</p>
-          <p v-if="projectSel.countries">
-            <b>Participants from:</b> <br> {{ projectSel.countries }}
-          </p>
+          <div style="overflow-y: auto; height: 55%; padding: 4px; margin: 2px; box-sizing: border-box; text-align: justify">
+            <p style="box-sizing: border-box; wrap: auto">
+              {{ projectSel.projectDescription }}
+            </p>
+            <p
+              v-if="projectSel.countries"
+              style=""
+            >
+              <b>Participants from:</b> <br> {{ projectSel.countries }}
+            </p>
+          </div>
         </q-card-section>
       </q-card>
     </div>
@@ -115,7 +104,7 @@
   <div
     v-if="dataLoaded && projectSel"
     class="q-mx-auto q-pt-md"
-    style="width: 800px"
+    style="width: 600px"
   >
     <q-carousel
       v-model="slide"
@@ -125,12 +114,14 @@
       thumbnails
       infinite
       :fullscreen="fullscreen"
+      style="border-radius: 25px"
     >
       <q-carousel-slide
         v-for="doc in data[0].photos"
         :key="doc"
         :name="doc"
         :img-src="doc"
+        style="background-size: contain; background-repeat: no-repeat; background-color: #4a5859"
         @click="fullscreen=!fullscreen"
       />
     </q-carousel>
@@ -169,17 +160,6 @@ const projectSel = ref(false)
 const clicked = ref(false)
 const fullscreen = ref(false)
 
-const reloadYears = () => {
-  for (let i = 0; i < props.projects.length; i++) {
-    if (!years.value.includes(props.projects[i].year)) {
-      years.value.push(props.projects[i].year)
-    }
-  }
-
-  years.value.sort(function (a, b) {
-    return b - a
-  })
-}
 for (let i = 0; i < props.projects.length; i++) {
   if (!years.value.includes(props.projects[i].year)) {
     years.value.push(props.projects[i].year)
@@ -237,9 +217,7 @@ document.onkeydown = (evt) => {
   transform: rotateY(180deg);
   -webkit-transform: rotateX(180deg);
 }
-.q-card {
-  width: 350px; height: 450px; border-radius: 5px;
-}
+
 .flip-card-front:hover {
   box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.5);
   scale: 1.04;
@@ -256,6 +234,26 @@ background-color: #B2D08E
   color: rgb(220, 216, 216);
   background-color: #3c714b;
 
+}
+.q-card {
+  box-sizing: border-box;
+  width: 350px;
+  height: 450px;
+  border-radius: 40px;
+  background-color: #b2d08e;
+  min-height: 412px;
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: #AAAAAA;
+}
+img{
+  border-radius: 40px;
 }
 
 </style>

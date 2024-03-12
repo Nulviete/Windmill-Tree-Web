@@ -30,7 +30,7 @@
           </q-card-section>
           <q-card-section class="q-pa-none">
             <img
-              :src="'/members/'+member.name+'.JPG'"
+              :src="'/members/Hrystia.JPG'"
               width="100%"
               class="q-ma-none q-pa-none photo"
             >

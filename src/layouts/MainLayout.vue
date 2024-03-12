@@ -56,7 +56,7 @@
                 <q-item
                   clickable
                   active-class="bg-green-3"
-                  :to="{ name: 'InternationalProjects'}"
+                  @click="pageOrRefresh('InternationalProjects')"
                 >
                   <q-item-section>
                     International
@@ -66,7 +66,7 @@
                   v-ripple
                   clickable
                   active-class="bg-green-3"
-                  :to="{ name: 'ForUkraine'}"
+                  @click="pageOrRefresh('ForUkraine')"
                 >
                   <q-item-section>
                     4 Ukraine
@@ -118,7 +118,10 @@
           />
         </div>
       </div>
+
+      <!-- Language options -->
       <div
+        style="visibility: hidden"
         class="row q-pa-md"
       >
         <div class="q-px-sm">
@@ -166,6 +169,22 @@
     </q-footer>
   </q-layout>
 </template>
+
+<script setup>
+
+import { useRoute, useRouter } from 'vue-router'
+
+const route = useRoute()
+const router = useRouter()
+
+console.log(route.matched)
+
+const pageOrRefresh = (page) => {
+  if (route.matched[1].name === page) router.go()
+  else router.push({ name: page })
+}
+
+</script>
 
 <style scoped>
 .footer {

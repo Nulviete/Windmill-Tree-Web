@@ -1,22 +1,17 @@
 <template>
   <q-page>
-    <div
-      class="hero text-center q-ma-auto vertical-center q-mx-auto"
-      style="position: relative"
-    >
-      <h1
-        class=""
-      >
+    <!-- Hero Image -->
+    <div class="hero text-center q-ma-auto vertical-center q-mx-auto">
+      <h1 class="">
         Windmill Tree
       </h1>
-
       <h3
         class="q-mx-auto full-width"
-        style=""
       >
         ,,Give a person a little of yourself. <br> For this, the soul is filled with light." -Lina Kostenko
       </h3>
     </div>
+
     <!-- socials -->
     <div
       class="text-center row justify-center contacts bg-grey-5 q-py-md"
@@ -34,14 +29,13 @@
       <a href="https://www.youtube.com/@foundationwindmilltree8203"><i
         class="fa-brands fa-youtube fa-4x cursor-pointer"
       /></a>
-
       <a href="https://wa.me/+48796369201"><i
         class="fa-brands fa-whatsapp fa-4x cursor-pointer"
       /></a>
     </div>
 
+    <!-- Foundation description -->
     <div
-      style="width: 55%"
       class="about-us text-justify q-mx-auto text-h4 q-py-lg"
     >
       Windmill Tree is not just a foundation: we are a family on a true-hearted journey.<br><br> Our goal? To fill this world with creativity, make youth and social work even better. We are connecting with rural youth and creating bonds between countries.
@@ -63,6 +57,7 @@
   height: 85vh;
 background-position: center;
 background-size: cover;
+position: relative;
 
 color: white;
 }
@@ -91,5 +86,6 @@ a {
 .about-us {
 font-family: 'Fira Sans', sans-serif;
 line-height: 1.4em;
+width: 55%
 }
 </style>
