@@ -5,7 +5,21 @@
     style=""
   >
     <div v-if="dataLoaded">
-      <MemberCards :members="data" />
+      <!-- head section -->
+      <MemberCard
+        :members="headMembers"
+        :data-loaded="dataLoaded"
+      />
+      <!-- secondHead section -->
+      <MemberCard
+        :members="secondHeadMembers"
+        :data-loaded="dataLoaded"
+      />
+      <!-- volunteer section -->
+      <MemberCard
+        :members="volunteers"
+        :data-loaded="dataLoaded"
+      />
     </div>
     <div v-else>
       <q-spinner-hourglass
@@ -18,16 +32,21 @@
 </template>
 
 <script setup>
-
 import getMembers from 'src/composables/getMembers'
-
-import MemberCards from 'src/components/MemberCards.vue'
+import MemberCard from 'src/components/MemberCard.vue'
+import { onMounted, computed } from 'vue'
 
 const { loadMembers, data, dataLoaded, error } = getMembers()
 
-loadMembers()
+onMounted(async () => {
+  await loadMembers()
+})
 
-if (error) {
+const headMembers = computed(() => data.value.filter((member) => member.position === 'Head of the Foundation' || member.position === 'Vice'))
+const secondHeadMembers = computed(() => data.value.filter((member) => member.position === 'Root Member'))
+const volunteers = computed(() => data.value.filter((member) => member.position === 'Volunteer'))
+
+if (error.value) {
   console.log(error)
 }
 

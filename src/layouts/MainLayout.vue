@@ -177,8 +177,6 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-console.log(route.matched)
-
 const pageOrRefresh = (page) => {
   if (route.matched[1].name === page) router.go()
   else router.push({ name: page })
